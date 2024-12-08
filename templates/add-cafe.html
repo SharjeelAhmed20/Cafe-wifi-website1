@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Cafe</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <h1 style="color:black">Add New Cafe</h1>
+
+    <form method="POST" action="{{ url_for('add_new') }}">
+        {{ form.hidden_tag() }}  <!-- CSRF Token -->
+
+        <div>
+            <label for="name">Cafe Name:</label>
+            {{ form.name() }}
+        </div>
+
+        <div>
+            <label for="map_url">Cafe Map URL:</label>
+            {{ form.map_url() }}
+        </div>
+
+        <div>
+            <label for="img_url">Cafe Image URL:</label>
+            {{ form.img_url() }}
+        </div>
+
+        <div>
+            <label for="location">Location:</label>
+            {{ form.location() }}
+        </div>
+
+        <div>
+            <label for="seats">No of seats:</label>
+            {{ form.seats() }}
+        </div>
+
+        <div>
+            <label for="has_toilets">Has Toilets?</label>
+            {{ form.has_toilets() }}
+        </div>
+
+        <div>
+            <label for="has_wifi">Has Wifi?</label>
+            {{ form.has_wifi() }}
+        </div>
+
+        <div>
+            <label for="coffee_price">Coffee Price:</label>
+            {{ form.coffee_price() }}
+        </div>
+
+        <div>
+            <label for="has_sockets">Has Sockets?</label>
+            {{ form.has_sockets() }}
+        </div>
+
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+
+</body>
+</html>

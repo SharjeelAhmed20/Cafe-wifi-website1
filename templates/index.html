@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work-Friendly Places</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/script.js" defer></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Work-Friendly Places in London</h1>
+  </header>
+  <div style="padding: 20px; display: flex; justify-content: center;">
+        <!-- Button to navigate to Add New Cafe page -->
+        <a href="/add_new">
+            <button style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer;">
+                Add New Cafe
+            </button>
+        </a>
+    </div>
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <div class="places-list">
+      {% for cafe in all_cafes %}
+        <div class="place">
+          <img src="{{ cafe.img_url}}" alt="{{ cafe.name }}">
+          <div class="place-info">
+    <h3>{{ cafe.name }}</h3>
+    <p>{{ cafe.location }}</p>
+    <p class="rating">{{ cafe.seats }} seats available</p>
+    <a href="{{ cafe.map_url}}" class="map-url">
+        <p>Map-url</p>
+    </a>
+    <p>Toilets: {{ cafe.has_toilet }}</p>
+    <p>Wifi access: {{ cafe.has_wifi }}</p>
+    <p>Charging Sockets: {{ cafe.has_sockets }}</p>
+    <p>Coffee Price: {{ cafe.coffee_price }}</p>
+</div>
+
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2024 Work-Friendly Places | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
